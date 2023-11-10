@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="162" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="10" />
+          <Fields>
+            <Field name="Industry" />
+            <Field name="Name" />
+            <Field name="Age" />
+            <Field name="YearsOfEducation" />
+            <Field name="YearsAtCurrentJob" />
+            <Field name="Salary" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Communication</c>
+              <c>Ronald Dryer</c>
+              <c>43</c>
+              <c>16</c>
+              <c>5</c>
+              <c>83000</c>
+            </r>
+            <r>
+              <c>Manufacturing</c>
+              <c>Angelina Prissant</c>
+              <c>33</c>
+              <c>18</c>
+              <c>4</c>
+              <c>87000</c>
+            </r>
+            <r>
+              <c>Manufacturing</c>
+              <c>Tara Jackson</c>
+              <c>28</c>
+              <c>12</c>
+              <c>6</c>
+              <c>35000</c>
+            </r>
+            <r>
+              <c>Communication</c>
+              <c>Keith Jacobs</c>
+              <c>56</c>
+              <c>14</c>
+              <c>8</c>
+              <c>63000</c>
+            </r>
+            <r>
+              <c>Manufacturing</c>
+              <c>Terrence McKinley</c>
+              <c>26</c>
+              <c>18</c>
+              <c>2</c>
+              <c>80000</c>
+            </r>
+            <r>
+              <c>Manufacturing</c>
+              <c>Wilma Holmes</c>
+              <c>63</c>
+              <c>16</c>
+              <c>12</c>
+              <c>77000</c>
+            </r>
+            <r>
+              <c>Communication</c>
+              <c>Mark Hodges</c>
+              <c>46</c>
+              <c>12</c>
+              <c>2</c>
+              <c>34500</c>
+            </r>
+            <r>
+              <c>Software</c>
+              <c>Danielle Rodriguez</c>
+              <c>29</c>
+              <c>22</c>
+              <c>1</c>
+              <c>108000</c>
+            </r>
+            <r>
+              <c>Software</c>
+              <c>Michael Lawrence</c>
+              <c>53</c>
+              <c>16</c>
+              <c>7</c>
+              <c>93000</c>
+            </r>
+            <r>
+              <c>Software</c>
+              <c>Christina Kim</c>
+              <c>32</c>
+              <c>16</c>
+              <c>4</c>
+              <c>88000</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="JupyterCode">
+        <Position x="378" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DefaultVenv>1</DefaultVenv>
+          <JupyterGuidDir>48c652135995126cadf7e002f2aef5b6</JupyterGuidDir>
+          <LastExecutedByEngineVersion>2023.2.1.7</LastExecutedByEngineVersion>
+          <vEnvName>designerbasetools_venv</vEnvName>
+          <GuidDir>5feb65a5-2bbe-4da5-8a44-96e7124eef32</GuidDir>
+          <productionModeScript>#################################
+# List all non-standard packages to be imported by your 
+# script here (only missing packages will be installed)
+from ayx import Package
+#Package.installPackages(['pandas','numpy'])
+
+
+#################################
+from ayx import Alteryx
+
+
+#################################
+# read in data from input anchor as a pandas dataframe
+# (after running the workflow)
+df = Alteryx.read("#1")
+
+# display the pandas dataframe
+df
+
+
+#################################
+df['new_column'] = df['Age'] - df['YearsAtCurrentJob']
+df
+
+
+#################################
+# and then send it to one of the output anchors
+Alteryx.write(df, 1)
+</productionModeScript>
+          <Notebook><![CDATA[{"cells":[{"cell_type":"markdown","metadata":{"ayx":{"cell_class":"text_cell","cell_css":"border: 3px solid #357; margin: 4px; background: #fbffff","cell_type":"markdown","contents_keyword":"Alteryx.help()","first_line":"Run `Alteryx.help()` for info about useful functions.","label":"info"}},"source":["Run `Alteryx.help()` for info about useful functions.  \n","i.e., `Alteryx.read(\"#1\")`, `Alteryx.write(df,1)`, `Alteryx.getWorkflowConstant(\"Engine.WorkflowDirectory\")`"]},{"cell_type":"code","execution_count":1,"metadata":{"ayx":{"cell_class":"code_cell","cell_css":"border: 1px solid #58a; margin: 2px;","cell_type":"code","contents_keyword":"installPackages","first_line":"# List all non-standard packages to be imported by your","label":"deps"}},"outputs":[],"source":["# List all non-standard packages to be imported by your \n","# script here (only missing packages will be installed)\n","from ayx import Package\n","#Package.installPackages(['pandas','numpy'])"]},{"cell_type":"code","execution_count":2,"metadata":{},"outputs":[],"source":["from ayx import Alteryx"]},{"cell_type":"code","execution_count":3,"metadata":{},"outputs":[],"source":["#Leitura dos dados que estão no #1 que é o nome do input\n","\n","Leitura_DF1 = Alteryx.read(\"#1\")\n","\n","#Exibe o resultado\n","Leitura_DF1"]},{"cell_type":"code","execution_count":4,"metadata":{},"outputs":[],"source":["#comando para exibir o dataframe no output da ferramenta\n","\n","Output_DF1 = Alteryx.write(Leitura_DF1,1)"]}],"metadata":{"kernelspec":{"display_name":"designerbasetools_venv","language":"python","name":"designerbasetools_venv"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.8.16"}},"nbformat":4,"nbformat_minor":2}]]></Notebook>
+          <Port>56538</Port>
+          <WorkflowName>c:\users\jkbd_\appdata\local\alteryx\bin\new workflow1</WorkflowName>
+          <specialCellMetadata>[{"label":"info","contents_keyword":"Alteryx.help()","cell_css":"border: 3px solid #357; margin: 4px; background: #fbffff","first_line":"Run `Alteryx.help()` for info about useful functions.","cell_type":"markdown","cell_class":"text_cell"},{"label":"deps","contents_keyword":"installPackages","cell_css":"border: 1px solid #58a; margin: 2px;","first_line":"# List all non-standard packages to be imported by your","cell_type":"code","cell_class":"code_cell"}]</specialCellMetadata>
+          <AssetManaged>True</AssetManaged>
+          <JupyterProduction>false</JupyterProduction>
+          <JupyterGuidCopy />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxJupyterPluginEngine.dll" EngineDllEntryPoint="AlteryxJupyter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="114" width="600" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>INTEGRAÇÕES - Importando dados para o ALTERYX com PYTHON</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor r="130" g="141" b="169" />
+          <FillColor r="225" g="231" b="242" />
+          <Shape shape="1" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection name="#1">
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>importando_dados</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="a35eaf1b-d431-4f53-85a0-49f0105f6c72" />
+      <Telemetry>
+        <PreviousWorkflowId value="e9a1a003-57e5-460e-89df-62a480941143" />
+        <OriginWorkflowId value="e9a1a003-57e5-460e-89df-62a480941143" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

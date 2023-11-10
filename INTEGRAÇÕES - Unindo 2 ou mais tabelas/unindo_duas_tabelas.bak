@@ -114,7 +114,7 @@
       <Properties>
         <Configuration>
           <DefaultVenv>1</DefaultVenv>
-          <JupyterGuidDir>5052878a1f8eed3e7c1d5a66066785e6</JupyterGuidDir>
+          <JupyterGuidDir>509ba8e9b435f6daa4a3f6379094c833</JupyterGuidDir>
           <LastExecutedByEngineVersion>2023.2.1.7</LastExecutedByEngineVersion>
           <vEnvName>designerbasetools_venv</vEnvName>
           <GuidDir>5feb65a5-2bbe-4da5-8a44-96e7124eef32</GuidDir>
@@ -149,7 +149,7 @@ Alteryx.write(df, 1)
 </productionModeScript>
           <Notebook><![CDATA[{"cells":[{"cell_type":"markdown","metadata":{"ayx":{"cell_class":"text_cell","cell_css":"border: 3px solid #357; margin: 4px; background: #fbffff","cell_type":"markdown","contents_keyword":"Alteryx.help()","first_line":"Run `Alteryx.help()` for info about useful functions.","label":"info"}},"source":["Run `Alteryx.help()` for info about useful functions.  \n","i.e., `Alteryx.read(\"#1\")`, `Alteryx.write(df,1)`, `Alteryx.getWorkflowConstant(\"Engine.WorkflowDirectory\")`"]},{"cell_type":"code","execution_count":1,"metadata":{"ayx":{"cell_class":"code_cell","cell_css":"border: 1px solid #58a; margin: 2px;","cell_type":"code","contents_keyword":"installPackages","first_line":"# List all non-standard packages to be imported by your","label":"deps"}},"outputs":[],"source":["# List all non-standard packages to be imported by your \n","# script here (only missing packages will be installed)\n","from ayx import Package\n","#Package.installPackages(['pandas','numpy'])"]},{"cell_type":"code","execution_count":2,"metadata":{},"outputs":[],"source":["from ayx import Alteryx"]},{"cell_type":"code","execution_count":3,"metadata":{},"outputs":[],"source":["#Leitura dos dados que estão no #1 que é o nome do input\n","\n","Leitura_DF1 = Alteryx.read(\"#1\")\n","\n","#Exibe o resultado\n","Leitura_DF1"]},{"cell_type":"code","execution_count":4,"metadata":{},"outputs":[],"source":["#comando para exibir o dataframe no output da ferramenta\n","\n","Output_DF1 = Alteryx.write(Leitura_DF1,1)"]}],"metadata":{"kernelspec":{"display_name":"designerbasetools_venv","language":"python","name":"designerbasetools_venv"},"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.8.16"}},"nbformat":4,"nbformat_minor":2}]]></Notebook>
           <Port>56538</Port>
-          <WorkflowName>c:\users\jkbd_\desktop\alteryx\alteryx&amp;python\integrações - importando dados para o alteryx com python\importando_dados.yxmd</WorkflowName>
+          <WorkflowName>c:\users\jkbd_\appdata\local\alteryx\bin\copy of importando_dados.yxmd</WorkflowName>
           <specialCellMetadata>[{"label":"info","contents_keyword":"Alteryx.help()","cell_css":"border: 3px solid #357; margin: 4px; background: #fbffff","first_line":"Run `Alteryx.help()` for info about useful functions.","cell_type":"markdown","cell_class":"text_cell"},{"label":"deps","contents_keyword":"installPackages","cell_css":"border: 1px solid #58a; margin: 2px;","first_line":"# List all non-standard packages to be imported by your","cell_type":"code","cell_class":"code_cell"}]</specialCellMetadata>
           <AssetManaged>True</AssetManaged>
           <JupyterProduction>false</JupyterProduction>
@@ -210,7 +210,7 @@ Alteryx.write(df, 1)
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>importando_dados</Name>
+      <Name>unindo_duas_tabelas</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
@@ -225,9 +225,9 @@ Alteryx.write(df, 1)
         <Description />
         <File />
       </Example>
-      <WorkflowId value="a35eaf1b-d431-4f53-85a0-49f0105f6c72" />
+      <WorkflowId value="2114a20f-2c94-46d2-85e9-96bf3e924a67" />
       <Telemetry>
-        <PreviousWorkflowId value="e9a1a003-57e5-460e-89df-62a480941143" />
+        <PreviousWorkflowId value="a35eaf1b-d431-4f53-85a0-49f0105f6c72" />
         <OriginWorkflowId value="e9a1a003-57e5-460e-89df-62a480941143" />
       </Telemetry>
       <PlatformWorkflowId value="" />
